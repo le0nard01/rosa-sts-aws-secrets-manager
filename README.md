@@ -13,10 +13,10 @@ Integrating ROSA STS with AWS Secrets Manager
 
 ### 2. ROSA Side
 1. Install **Secret Store CSI Driver** from Operator Hub.
-<br>
+
 2. Install AWS Provider Secret Store and configurations in **base/rosa/** path, you can use the following command: 
 `oc apply -f base/rosa/`
-<br>
+
 3. Set ARN from Role, for example, **arn:aws:iam::xxxx:role/AssumeFromOIDC**, into default Service Account in applications namespace as a **eks.amazonaws.com/role-arn** annotation, you can use the following example command: 
 `oc annotate sa -n apps eks.amazonaws.com/role-arn='arn:aws:iam::xxxx:role/AssumeFromOIDC'`
 
